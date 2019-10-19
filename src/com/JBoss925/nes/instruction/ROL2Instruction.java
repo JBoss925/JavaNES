@@ -2,6 +2,7 @@ package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class ROL2Instruction extends Instruction {
 
@@ -11,6 +12,6 @@ public class ROL2Instruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("ROL2 " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("ROL2", inst);
     }
 }

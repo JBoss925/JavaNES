@@ -1,7 +1,7 @@
 package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
-import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class PLAInstruction extends Instruction {
 
@@ -11,6 +11,6 @@ public class PLAInstruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("PLA " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("PLA", inst);
     }
 }

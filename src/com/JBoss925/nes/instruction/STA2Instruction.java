@@ -1,7 +1,7 @@
 package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
-import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class STA2Instruction extends Instruction {
 
@@ -11,6 +11,6 @@ public class STA2Instruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("STA2 " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("STA2", inst);
     }
 }

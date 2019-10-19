@@ -1,7 +1,7 @@
 package com.JBoss925.nes.instruction;
 
         import com.JBoss925.nes.components.CPU;
-        import com.JBoss925.nes.utils.ConversionUtil;
+        import com.JBoss925.nes.utils.LogUtil;
 
 public class LDAInstruction extends Instruction {
 
@@ -11,6 +11,13 @@ public class LDAInstruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("LDA " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("LDA", inst);
+
+        switch (inst[0]){
+            // Load immediate
+            case ((byte)0xa9):
+                LogUtil.commandInfoLog("IMMEDIATE", new byte[]{inst[1]});
+                cpu.aReg = inst[1];
+        }
     }
 }

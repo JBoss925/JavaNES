@@ -2,6 +2,7 @@ package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class ADC2Instruction extends Instruction {
 
@@ -11,6 +12,6 @@ public class ADC2Instruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("ADC2 " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("ADC2", inst);
     }
 }

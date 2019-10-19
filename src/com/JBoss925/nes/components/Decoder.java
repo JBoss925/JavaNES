@@ -2,6 +2,7 @@ package com.JBoss925.nes.components;
 
 import com.JBoss925.nes.instruction.*;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -466,7 +467,7 @@ public class Decoder {
                 case 0x7d:
                     return instructionInstances.get(instruction[0]).resetWithNewInst(Arrays.copyOf(instruction, 3));
                 case 0x8d:
-                    return instructionInstances.get(instruction[0]).resetWithNewInst(Arrays.copyOf(instruction, 2));
+                    return instructionInstances.get(instruction[0]).resetWithNewInst(Arrays.copyOf(instruction, 3));
                 case 0x9d:
                     return instructionInstances.get(instruction[0]).resetWithNewInst(Arrays.copyOf(instruction, 3));
                 case 0xad:
@@ -519,14 +520,14 @@ public class Decoder {
 
 
                 default:
-                    System.out.println("Instruction: \"" +
+                    LogUtil.defaultLog("Instruction: \"" +
                             ConversionUtil.bytesToHex(instruction)
                             + "\" not recognized!");
                     // Do No-Op and pray??
                     return instructionInstances.get(((byte)0xea)).resetWithNewInst(Arrays.copyOf(instruction, 1));
             }
         } catch (Exception e){
-            System.out.println("Instruction: \"" +
+            LogUtil.defaultLog("Instruction: \"" +
                     ConversionUtil.bytesToHex(instruction)
                     + "\" not recognized!");
             // Do No-Op and pray??

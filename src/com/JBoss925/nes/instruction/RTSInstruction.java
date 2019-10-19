@@ -2,6 +2,7 @@ package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class RTSInstruction extends Instruction {
 
@@ -11,6 +12,6 @@ public class RTSInstruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("RTS " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("RTS", inst);
     }
 }

@@ -2,6 +2,7 @@ package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class SEIInstruction extends Instruction {
 
@@ -11,7 +12,7 @@ public class SEIInstruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("SEI " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("SEI", inst);
         cpu.pReg.setInterrupt(true);
     }
 }

@@ -2,6 +2,7 @@ package com.JBoss925.nes.instruction;
 
 import com.JBoss925.nes.components.CPU;
 import com.JBoss925.nes.utils.ConversionUtil;
+import com.JBoss925.nes.utils.LogUtil;
 
 public class ORA2Instruction extends Instruction {
 
@@ -11,6 +12,6 @@ public class ORA2Instruction extends Instruction {
 
     @Override
     public void process(CPU cpu) {
-        System.out.println("OR2A " + ConversionUtil.bytesToHex(inst));
+        LogUtil.commandLog("ORA2", inst);
     }
 }
