@@ -7,9 +7,10 @@ public abstract class Instruction {
     public byte[] inst;
 
     public abstract void process(CPU cpu);
-    public String getName(){
-        return this.getClass().getSimpleName();
-    }
 
+    public Instruction resetWithNewInst(byte[] inst){
+        this.inst = inst;
+        return this;
+    }
 
 }

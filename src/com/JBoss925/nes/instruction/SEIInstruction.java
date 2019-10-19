@@ -12,5 +12,6 @@ public class SEIInstruction extends Instruction {
     @Override
     public void process(CPU cpu) {
         System.out.println("SEI " + ConversionUtil.bytesToHex(inst));
+        cpu.pReg.setInterrupt(true);
     }
 }

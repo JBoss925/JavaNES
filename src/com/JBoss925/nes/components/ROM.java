@@ -18,7 +18,7 @@ public class ROM {
     public byte[] programBytes;
     public int headerLength = 16;
     public int numBlocks = 2; // TODO: pull from header
-    public static int KB_SIZE = 1024;
+    public final static int KB_SIZE = 1024;
 
     public ROM(File romFile) throws IOException {
        bytes = Files.readAllBytes(romFile.toPath());
