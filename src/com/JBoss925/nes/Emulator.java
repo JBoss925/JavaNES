@@ -1,6 +1,7 @@
 package com.JBoss925.nes;
 
 import com.JBoss925.nes.components.CPU;
+import com.JBoss925.nes.components.PPU;
 import com.JBoss925.nes.components.ROM;
 
 import java.util.Timer;
@@ -10,12 +11,14 @@ public class Emulator {
 
     public ROM rom;
     public CPU cpu;
+    public PPU ppu;
     private static Timer clock = new Timer();
     private static int clockSpeedHz = 3;
 
     public Emulator(ROM rom){
         this.rom = rom;
         this.cpu = new CPU(this.rom);
+        this.ppu = new PPU(this.cpu, 0);
     }
 
     public void start(){
